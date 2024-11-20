@@ -1,16 +1,20 @@
-/* Background and general styling */
+.h1-login {
+  color: var(--primary-color);
+}
+
 .container {
-  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+}
+.card-all {
+  height: 600px;
+  width: 600px;
+  background-color: var(--background-color);
 }
 
-.card {
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.text-primary {
-  color: #a06b58 !important;
+.btn-login {
+  background-color: var(--accent-color);
+  color: var(--text-color);
 }

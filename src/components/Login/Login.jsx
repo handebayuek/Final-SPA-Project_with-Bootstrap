@@ -34,11 +34,11 @@ const Login = (props) => {
 
   return (
     <div>
-      <div className="row justify-content-center align-items-center min-vh-100">
-        <div className="col-md-3 col-md-6 col-md-3">
-          <div className="card shadow p-4">
+      <div className="container pt-5">
+        <div className="">
+          <div className="card-all shadow p-4 border border-success rounded-4 d-flex justify-content-center align-items-center">
             <div className="card-body">
-              <h1 className="text-center mb-4">Login</h1>
+              <h1 className="h1-login text-center mb-4">Login</h1>
               <div className="mb-3">
                 <label className="form-label">Email</label>
                 <input
@@ -64,20 +64,30 @@ const Login = (props) => {
                   <span className="text-danger">{passwordError}</span>
                 )}
               </div>
-              <div className="d-grid gap-2">
-                <button className="btn-login" onClick={onButtonClick}>
-                  Log in
-                </button>
-                <p className="text-center my-2">or</p>
-                <button className="btn-login" onClick={onRegisterClick}>
-                  Register
-                </button>
+              <div className="btn-all d-flex justify-content-around  align-item-center">
+                <div>
+                  <button
+                    type="submit"
+                    className="btn btn-xl btn-login"
+                    onClick={onButtonClick}
+                  >
+                    Log in
+                  </button>
+
+                  <p className="text-center my-2">or</p>
+
+                  <button
+                    className="btn btn-xl btn-login"
+                    onClick={onRegisterClick}
+                  >
+                    Register
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      s
     </div>
   );
 };
