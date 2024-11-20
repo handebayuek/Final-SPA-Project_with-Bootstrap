@@ -1,0 +1,115 @@
+.product-cart {
+  padding: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--page-background);
+}
+
+.product-container {
+  border: 1px solid var(--dark-green);
+}
+
+.description {
+  text-align: left;
+  padding: 20px;
+}
+
+.description h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--dark-color);
+  padding-bottom: 20px;
+}
+
+.description h6 {
+  font-size: 0.9em;
+  color: var(--rousel-color);
+}
+
+.description p {
+  font-size: 1em;
+  color: var(--text-color);
+}
+
+.description .product-price {
+  color: var(--dark-color);
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 15px;
+  color: var(--rousel-color2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border-radius: 12px;
+  font-weight: bolder;
+  box-shadow: 2px 1px 2px 1px var(--dark-green);
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 120%;
+  background-color: var(--text-color-navBar);
+  top: 50%;
+  transform: skewX(30deg) translate(-150%, -50%);
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: var(--dark-green);
+  color: var(--rousel-color2);
+  box-shadow: 0 2px 0 2px var(--dark-green);
+}
+
+.btn:hover::before {
+  transform: skewX(30deg) translate(150%, -50%);
+  transition-delay: 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.description-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .description h2 {
+    font-size: 1.5em;
+  }
+
+  .description p {
+    font-size: 0.9em;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .description h2 {
+    font-size: 1.3em;
+  }
+
+  .description p {
+    font-size: 0.85em;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+  }
+}

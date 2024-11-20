@@ -1,0 +1,24 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --primary-color: #fefae0;
+  --text-color-navBar: #e9edc9;
+  --background-color: #ccd5ae;
+  --secondary-color: #faedcd;
+  --accent-color: #d4a373;
+  --text-color: #a28162;
+  --dark-color: #6c584c;
+  --dark-green: #a08f77;
+  --delete-color: #de4f4f;
+  --page-background: #fffcf7;
+  --rousel-color: #f8961e;
+  --rousel-color2: #edc4b3;
+  --brand-fontFamily: "Special Elite", system-ui;
+}

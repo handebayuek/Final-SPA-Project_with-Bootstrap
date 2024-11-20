@@ -1,0 +1,16 @@
+/* Background and general styling */
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.text-primary {
+  color: #a06b58 !important;
+}
