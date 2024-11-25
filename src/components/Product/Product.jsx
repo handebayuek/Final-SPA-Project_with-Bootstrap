@@ -19,7 +19,10 @@ export default function Product() {
                   <h6>{product.bulk}</h6>
                   <p>{product.description}</p>
                   <p className="product-price">{product.price}€</p>
-                  <button onClick={() => addToCart(product)} className="btn">
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="btn-product"
+                  >
                     Add to Bag
                   </button>
                 </div>
@@ -47,7 +50,10 @@ export default function Product() {
                   <h6>{product.bulk}</h6>
                   <p>{product.description}</p>
                   <p className="product-price">{product.price}€</p>
-                  <button onClick={() => addToCart(product)} className="btn">
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="btn-product"
+                  >
                     Add to Bag
                   </button>
                 </div>

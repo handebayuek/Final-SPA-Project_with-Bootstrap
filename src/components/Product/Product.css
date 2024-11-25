@@ -37,7 +37,7 @@
   color: var(--dark-color);
 }
 
-.btn {
+.btn-product {
   margin-top: 20px;
   padding: 10px;
   font-size: 15px;
@@ -51,7 +51,7 @@
   box-shadow: 2px 1px 2px 1px var(--dark-green);
 }
 
-.btn:before {
+.btn-product:before {
   content: "";
   position: absolute;
   width: 100px;
@@ -62,18 +62,18 @@
   transition: all 0.5s;
 }
 
-.btn:hover {
+.btn-product:hover {
   background-color: var(--dark-green);
   color: var(--rousel-color2);
   box-shadow: 0 2px 0 2px var(--dark-green);
 }
 
-.btn:hover::before {
+.btn-product:hover::before {
   transform: skewX(30deg) translate(150%, -50%);
   transition-delay: 0.1s;
 }
 
-.btn:active {
+.btn-product:active {
   transform: scale(0.9);
 }
 
