@@ -18,66 +18,76 @@ const Registration = () => {
       confirmPassword === ""
     ) {
       setError("All fields are required");
-    } else if (password !== confirmPassword) {
-      setError("Passwords do not match");
-    } else {
-      setError("");
-      navigate("/login");
+      return;
     }
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    setError("");
+    navigate("/");
   };
 
+  if (name && email && password && confirmPassword) {
+    navigate("/");
+  }
+
   return (
-    <div className={"register-page"}>
-      <div className={"register-form"}>
-        <div className={"register-header"}>
-          <h1 className="register-h1">Register</h1>
+    <div className="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
+      <div className="row w-75 shadow-lg rounded mt-5">
+        <div className=" col-md-6 bg-white p-5">
+          <h1 className="text-center ">Register</h1>
         </div>
-        <div className={"register-container"}>
-          <h3>Name</h3>
+        <div className="m-3">
+          <label className="form-label">Name</label>
           <input
             value={name}
             placeholder="Enter your name..."
             onChange={(e) => setName(e.target.value)}
-            className={"register-box"}
+            className="form-control"
           />
         </div>
-        <div className={"register-container"}>
-          <h3>Email</h3>
+        <div className="m-3">
+          <label className="form-label">Email</label>
           <input
             value={email}
             placeholder="Enter your email..."
             onChange={(e) => setEmail(e.target.value)}
-            className={"register-box"}
+            className="form-control"
           />
         </div>
-        <div className={"register-container"}>
-          <h3>Password</h3>
+        <div className="m-3">
+          <label className="form-label">Password</label>
           <input
             value={password}
             type="password"
             placeholder="Enter your password..."
             onChange={(e) => setPassword(e.target.value)}
-            className={"register-box"}
+            className="form-control"
           />
         </div>
-        <div className={"register-container"}>
-          <h3>Confirm Password</h3>
+        <div className="m-3">
+          <label className="form-label">Confirm Password</label>
           <input
             value={confirmPassword}
             type="password"
             placeholder="Confirm your password"
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className={"register-box"}
+            className="form-control"
           />
         </div>
-        <div className={"register-container"}>
-          <input
-            className={"register-btn"}
-            type="button"
-            onClick={onRegisterClick}
-            value={"Register"}
-          />
+        <div className="button-inspo d-flex row justify-content-evenly align-item-center">
+          <a href="#" className="button type--B" onClick={onRegisterClick}>
+            <div className="button__line"></div>
+            <div className="button__line"></div>
+            <span className="button__text">Register</span>
+            <div className="button__drow1"></div>
+            <div className="button__drow2"></div>
+          </a>
         </div>
+        <div className="text-danger text-center mb-3">{error}</div>
       </div>
     </div>
   );

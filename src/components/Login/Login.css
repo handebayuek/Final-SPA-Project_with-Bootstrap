@@ -8,16 +8,25 @@
   align-items: center;
   min-height: calc(100vh - 120px);
 }
+
 .card-all {
   height: 600px;
   width: 600px;
   background-color: var(--background-color);
 }
 
+.type--A {
+  --line_color: #555555;
+  --back_color: #ccd5ae;
+}
+.type--B {
+  --line_color: #1b1919;
+  --back_color: #edc4b3;
+}
+
 .button {
   position: relative;
   z-index: 0;
-
   height: 56px;
   text-decoration: none;
   font-size: 14px;
@@ -33,6 +42,7 @@
   width: 100%;
   height: 100%;
 }
+
 .button::before,
 .button::after,
 .button__text::before,
@@ -44,6 +54,7 @@
   background: var(--line_color);
   transition: all 0.5s ease;
 }
+
 .button::before {
   top: 0;
   left: 54px;
@@ -54,6 +65,7 @@
   right: 54px;
   width: 8px;
 }
+
 .button__text::before {
   bottom: 0;
   right: 54px;
@@ -249,9 +261,13 @@
   height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
 }
 .button:not(:last-child) {
   margin-bottom: 64px;
+}
+
+.img-fluid {
+  object-fit: cover;
 }

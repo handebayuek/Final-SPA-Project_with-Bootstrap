@@ -34,12 +34,12 @@ const Login = () => {
 
   return (
     <div className="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
-      <div className="row w-75 shadow-lg rounded overflow-hidden">
+      <div className="row w-75 shadow-lg rounded mt-5">
         {/* Left Side */}
-        <div className="col-md-6 bg-white p-5">
-          <h1 className="text-center mb-4">Welcome back!</h1>
-          <p className="text-center mb-5">Log in to your account to continue</p>
-          <div className="mb-3">
+        <div className=" col-md-6 bg-white p-5">
+          <h1 className="text-center ">Welcome back!</h1>
+          <p className="text-center ">Log in to your account to continue</p>
+          <div className="m-3">
             <label className="form-label">Email</label>
             <input
               type="email"
@@ -50,7 +50,7 @@ const Login = () => {
             />
             {emailError && <span className="text-danger">{emailError}</span>}
           </div>
-          <div className="mb-3">
+          <div className="m-3">
             <label className="form-label">Password</label>
             <input
               type="password"
@@ -63,7 +63,7 @@ const Login = () => {
               <span className="text-danger">{passwordError}</span>
             )}
           </div>
-          <div className="d-flex justify-content-between align-items-center mb-4">
+          <div className="d-flex justify-content-between align-items-center">
             <div>
               <input type="checkbox" className="me-2" />
               <label>Remember me</label>
@@ -72,7 +72,7 @@ const Login = () => {
               Forgot Password?
             </a>
           </div>
-          <div className="button-inspo d-flex row justify-content-center align-item-center">
+          <div className="button-inspo d-flex row justify-content-evenly align-item-center">
             <a href="#" className="button type--A" onClick={onButtonClick}>
               <div className="button__line"></div>
               <div className="button__line"></div>
@@ -80,8 +80,6 @@ const Login = () => {
               <div className="button__drow1"></div>
               <div className="button__drow2"></div>
             </a>
-
-            <div className="text-center p-4">or</div>
 
             <a href="#" className="button type--B" onClick={onRegisterClick}>
               <div className="button__line"></div>
@@ -97,7 +95,7 @@ const Login = () => {
           <img
             src="public/image/backgroung1.jpg"
             alt="Aespa Karina"
-            className="img-fluid w-100 h-100 object-cover position-absolute"
+            className="img-fluid w-100 h-100 position-absolute"
             style={{ opacity: 0.5 }}
           />
           <div className="text-center position-relative">
