@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Registration.css";
 
 const Registration = () => {
   const [name, setName] = useState("");
@@ -9,6 +10,17 @@ const Registration = () => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please write correct email (example@example.com)");
+    } else if (email === "") {
+      setError("");
+    } else {
+      navigate("/");
+    }
+  };
 
   const onRegisterClick = () => {
     if (
@@ -21,6 +33,10 @@ const Registration = () => {
       return;
     }
 
+    if (!validateEmail(email)) {
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
@@ -30,18 +46,14 @@ const Registration = () => {
     navigate("/");
   };
 
-  if (name && email && password && confirmPassword) {
-    navigate("/");
-  }
-
   return (
-    <div className="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
-      <div className="row w-75 shadow-lg rounded mt-5">
-        <div className=" col-md-6 bg-white p-5">
-          <h1 className="text-center ">Register</h1>
+    <div className="container-fluid d-flex align-items-center justify-content-center p-5 mt-3">
+      <div className="w-50 shadow-lg mt-5">
+        <div className="p-5">
+          <h1 className="text-center">Register</h1>
         </div>
         <div className="m-3">
-          <label className="form-label">Name</label>
+          <label className="form-label ">Name</label>
           <input
             value={name}
             placeholder="Enter your name..."
@@ -52,6 +64,7 @@ const Registration = () => {
         <div className="m-3">
           <label className="form-label">Email</label>
           <input
+            type="email"
             value={email}
             placeholder="Enter your email..."
             onChange={(e) => setEmail(e.target.value)}
@@ -78,8 +91,13 @@ const Registration = () => {
             className="form-control"
           />
         </div>
-        <div className="button-inspo d-flex row justify-content-evenly align-item-center">
-          <a href="#" className="button type--B" onClick={onRegisterClick}>
+        <div className="text-danger text-center mb-3">{error}</div>
+        <div className="button-inspo row d-flex justify-content-center align-item-center">
+          <a
+            href="#"
+            className="button type--B regist-btn"
+            onClick={onRegisterClick}
+          >
             <div className="button__line"></div>
             <div className="button__line"></div>
             <span className="button__text">Register</span>
@@ -87,7 +105,6 @@ const Registration = () => {
             <div className="button__drow2"></div>
           </a>
         </div>
-        <div className="text-danger text-center mb-3">{error}</div>
       </div>
     </div>
   );
